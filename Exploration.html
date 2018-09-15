@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+         <title></title>
+            
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+<!--            <link rel="stylesheet" type="text/css" href="Exploration.css">-->
+        
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+        
+    <style>
+        
+            @import url(https://fonts.googleapis.com/css?family=Nunito+Sans);
+
+            * {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+            }
+
+            .container {  
+                max-width: 620px; 
+                min-width: 420px;
+                margin: 40px auto;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #888;
+            }
+
+            .tabs {
+                overflow: hidden;
+                margin-left: 225px;
+                margin-bottom: -2px; // hide bottom border
+            }
+
+            .tabs a{
+                float: left;
+                cursor: pointer;
+                padding: 12px 24px;
+                transition: background-color 0.2s;
+                border: 1px solid #ccc;
+                border-right: none;
+                background-color: #f1f1f1;  
+            }
+
+
+            .tabs a:hover {
+                background-color: #aaa;
+                color: #fff;
+            }
+
+            .tabs a.active {
+                background-color: #fff;
+                color: #484848;
+                border-bottom: 2px solid #fff;
+                cursor: default;
+            }
+
+            .tabcontent {
+                padding: 30px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+            }
+
+            .button{
+
+                border-radius: 8px;
+                font-family: Arial, Helvetica, sans-serif;        
+                }       
+
+        </style>
+    </head>
+<body>
+        
+    
+    <div id="tabs" class="container">
+  
+    <div class="tabs">
+        <a v-on:click="activetab=1" v-bind:class="[ activetab === 1 ? 'active' : '' ]">Tab 1</a>
+        <a v-on:click="activetab=2" v-bind:class="[ activetab === 2 ? 'active' : '' ]">Tab 2</a>
+    </div>
+
+    <div class="content">
+        <div v-if="activetab === 1" class="tabcontent">
+            tab one
+        </div>
+        <div v-if="activetab === 2" class="tabcontent">
+            tab two
+        </div>
+        
+    </div>
+  
+</div>
+        
+        <div id="app-5">
+          <p>{{ message }}</p>
+          <button v-on:click="reverseMessage" class="button">Reverse Message</button>
+        </div>
+
+        
+    <script>
+        
+        new Vue({
+            el: '#tabs',
+            data: { activetab: 1 },
+        });
+        
+        
+        var app5 = new Vue({
+          el: '#app-5',
+          data: {
+            message: 'syas yllaer siht tahw ees ot nottub eht kcilC - 1 noitarolpxE'
+          },
+          methods: {
+            reverseMessage: function () {
+              this.message = this.message.split('').reverse().join('')
+    }
+  }
+})
+        
+        
+    </script>
+        
+        
+  
+      
+    </body>
+</html>
